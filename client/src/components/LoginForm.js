@@ -57,6 +57,20 @@ const LoginForm = () => {
         console.log("token :",token);
         console.log(msg);
 
+        if(msg === "invalid cradential"){
+            toast.error('invalid cradential', {
+                position: "top-right",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "colored",
+                });
+                return false
+        }
+
         if(responce.status >=400 || !userData){
             toast.error('server error in login', {
                 position: "top-right",
